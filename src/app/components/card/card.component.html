@@ -1,0 +1,19 @@
+<mat-paginator [length]="items.length"
+               [pageSize]="page_size"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="handlePage($event)">
+</mat-paginator>
+<br>
+<div class="card-columns m-5 animated fadeIn">
+  <div (click)="showMovie(item)" *ngFor="let item of items | pagination:page_size:page_number" class="card puntero">
+    <img class="card-img-top" [src]="item | movieImage" alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.title }}</h5>
+      <p class="card-text">
+        <span *ngFor="let movie of item.movies" class="badge badge-pill badge-primary">
+          {{ movie.name }}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<h1>Búsqueda Avanzada</h1>
+<div class="row">
+    <div class="col">
+      <input #end type="text" (keyup)="search(end.value)" class="form-control" placeholder="Búsqueda por título">
+    </div>
+  </div>  
+<app-loading class="m-5" *ngIf="loading"></app-loading>
+<br>
+<app-card *ngIf="!loading" [items]="movies"></app-card>
+  
