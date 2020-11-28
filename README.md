@@ -1,27 +1,27 @@
-# Moviedb
+## Tecnologías Usadas
+- Bootstrap 4.0: Para el manejo de estilos de texto, tamaño adaptativo de elementos visuales según la pantalla.
+- Angular Material: Usado en el estilo del paginador.
+- Angular CLI 11.0: Interfaz de consola para crear componentes, directivas, pipes, modulos y servicios. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
+## Componentes, servicios y pipes.
+Para la creacion de esta aplicacion solo se utilizo el modulo app.module que se crear por defecto al generar el proyecto.
 
-## Development server
+- navbar.component que contienen la barra de navegacion principal.
+- loading.component utilizado para precarga de cada vista.
+- home.component tiene un componente hijo llamado card.component que se encarga de renderizar, un listado de tarjetas de las ultimas peliculas en cartelera. 
+- movie.component renderiza el detalle de cada pelicula con su datos principales segun seleccionemos cada tarjeta.
+- search.component se encarga de buscar peliculas, según lo que escribamos en la barra de busqueda.
+- page-not-found.component encargado d emostrar una vista 404 cuando se intenta buscar una url que no existe.
+- pagination.pipe encargado de filtrar los datos del api, por un numero determinado de resultados.
+- moviedb.service encargado de consultar los datos json del api https://www.themoviedb.org.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Comandos utilizados para la generacion de las diferentes secciones de la app:
 
-## Code scaffolding
+Proyecto: teniendo instalado anteriormente node y npm solo ejecutamos la instruccion ng new nombre-app
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Componentes: ng g c nombre-componente
+Pipes: ng g p nombre-pipe
+Services: ng g s nombre-servicio
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Compilar para produccion:
+ng build --prod
